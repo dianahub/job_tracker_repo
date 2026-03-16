@@ -1,0 +1,6 @@
+gmail_importer.settings:
+  title: 'Gmail Importer'
+  description: 'Configure and run the Gmail job email importer.'
+  parent: system.admin_config_services
+  route_name: gmail_importer.settings
+  weight: 10

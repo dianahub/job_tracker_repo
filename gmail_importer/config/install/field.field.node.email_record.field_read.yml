@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_read
+    - node.type.email_record
+id: node.email_record.field_read
+field_name: field_read
+entity_type: node
+bundle: email_record
+label: read
+description: 'Was this read'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

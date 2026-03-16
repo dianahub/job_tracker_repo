@@ -1,0 +1,9 @@
+name: Gmail Importer
+type: module
+description: Imports job-related emails from Gmail into Drupal nodes using Claude AI.
+core_version_requirement: ^10 || ^11
+package: Job Tracker
+version: 1.0.0
+dependencies:
+  - drupal:node
+  - drupal:file

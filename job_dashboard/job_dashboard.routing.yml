@@ -1,0 +1,7 @@
+job_dashboard.page:
+  path: '/job-dashboard'
+  defaults:
+    _controller: '\Drupal\job_dashboard\Controller\JobDashboardController::page'
+    _title: 'Job Dashboard'
+  requirements:
+    _permission: 'access content'

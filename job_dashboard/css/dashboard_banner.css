@@ -1,0 +1,21 @@
+#job-dashboard-banner {
+  position: relative;
+  z-index: 100;
+}
+#job-dashboard-root button {
+  color: #c9a96e !important;
+  border-color: #c9a96e !important;
+  background: #1a1508 !important;
+}
+
+#job-dashboard-root button:hover {
+  color: #fff !important;
+  background: #c9a96e !important;
+  border-color: #c9a96e !important;
+}
+
+#job-dashboard-root button:disabled {
+  color: #555 !important;
+  border-color: #333 !important;
+  background: transparent !important;
+}

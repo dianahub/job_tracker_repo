@@ -1,0 +1,4 @@
+administer gmail importer:
+  title: 'Administer Gmail Importer'
+  description: 'Configure settings and run the Gmail import process.'
+  restrict access: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_immediate_action
+    - node.type.email_record
+id: node.email_record.field_immediate_action
+field_name: field_immediate_action
+entity_type: node
+bundle: email_record
+label: 'Immediate Action'
+description: 'does this request a phone call or resume or something else to do immediately.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

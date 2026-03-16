@@ -1,0 +1,23 @@
+gmail_importer.settings:
+  path: '/admin/config/services/gmail-importer'
+  defaults:
+    _form: '\Drupal\gmail_importer\Form\GmailImporterSettingsForm'
+    _title: 'Gmail Importer Settings'
+  requirements:
+    _permission: 'administer gmail importer'
+
+gmail_importer.run:
+  path: '/admin/config/services/gmail-importer/run'
+  defaults:
+    _controller: '\Drupal\gmail_importer\Controller\GmailImporterController::run'
+    _title: 'Run Gmail Import'
+  requirements:
+    _permission: 'administer gmail importer'
+
+gmail_importer.oauth_callback:
+  path: '/admin/config/services/gmail-importer/oauth'
+  defaults:
+    _controller: '\Drupal\gmail_importer\Controller\GmailImporterController::oauthCallback'
+    _title: 'Gmail OAuth'
+  requirements:
+    _permission: 'administer gmail importer'

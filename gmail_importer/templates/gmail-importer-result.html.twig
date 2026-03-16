@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for the Gmail Import result page.
+ *
+ * Variables:
+ * - saved:   Number of nodes saved.
+ * - skipped: Number of emails skipped.
+ * - log:     Array of log line strings.
+ */
+#}
+<div class="gmail-importer-result">
+  <h2>{{ 'Import complete'|t }}</h2>
+
+  <div class="gmail-importer-summary">
+    <span class="saved">✅ {{ 'Saved: @n'|t({'@n': saved}) }}</span>
+    &nbsp;|&nbsp;
+    <span class="skipped">⏭ {{ 'Skipped: @n'|t({'@n': skipped}) }}</span>
+  </div>
+
+  <details class="gmail-importer-log" open>
+    <summary>{{ 'Full import log'|t }}</summary>
+    <pre>{% for line in log %}{{ line }}
+{% endfor %}</pre>
+  </details>
+
+  <p>
+    <a href="{{ path('gmail_importer.run') }}" class="button">{{ 'Run again'|t }}</a>
+    &nbsp;
+    <a href="{{ path('gmail_importer.settings') }}" class="button">{{ 'Back to settings'|t }}</a>
+  </p>
+</div>

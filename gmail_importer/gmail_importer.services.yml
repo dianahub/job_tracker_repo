@@ -1,0 +1,26 @@
+services:
+  gmail_importer.gmail:
+    class: Drupal\gmail_importer\Service\GmailService
+    arguments:
+      - '@config.factory'
+      - '@file_system'
+      - '@logger.factory'
+      - '@messenger'
+
+  gmail_importer.claude:
+    class: Drupal\gmail_importer\Service\ClaudeService
+    arguments:
+      - '@config.factory'
+      - '@logger.factory'
+
+  gmail_importer.drupal_node:
+    class: Drupal\gmail_importer\Service\DrupalNodeService
+
+  gmail_importer.import:
+    class: Drupal\gmail_importer\Service\ImportService
+    arguments:
+      - '@gmail_importer.gmail'
+      - '@gmail_importer.claude'
+      - '@gmail_importer.drupal_node'
+      - '@logger.factory'
+      - '@messenger'

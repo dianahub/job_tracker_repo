@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Implements hook_page_top().
+ */
+function job_dashboard_page_top(array &$page_top) {
+  if (!\Drupal::service('path.matcher')->isFrontPage()) {
+    return;
+  }
+
+  $dashboard_url = \Drupal\Core\Url::fromRoute('job_dashboard.page')->toString();
+  $import_url    = \Drupal\Core\Url::fromRoute('gmail_importer.run')->toString();
+
+  $page_top['job_dashboard_banner'] = [
+    '#type'   => 'markup',
+    '#markup' => '
+      <div id="job-dashboard-banner" style="
+        background: #0073b6;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        border-radius: 6px;
+      ">
+        📋 <strong>Job Dashboard</strong>
+        <a href="' . $dashboard_url . '" style="
+          display: inline-block;
+          margin-left: 15px;
+          background: white;
+          color: #0073b6;
+          padding: 8px 20px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: bold;
+        ">View Job Dashboard →</a>
+        <a href="' . $import_url . '" style="
+          display: inline-block;
+          margin-left: 10px;
+          background: #004f80;
+          color: white;
+          padding: 8px 20px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: bold;
+          border: 2px solid white;
+        ">▶ Run Gmail Import</a>
+      </div>',
+    '#cache' => ['max-age' => 0],
+  ];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function job_dashboard_theme() {
+  return [
+    'job_dashboard' => [
+      'template'  => 'job-dashboard',
+      'variables' => [],
+    ],
+  ];
+}

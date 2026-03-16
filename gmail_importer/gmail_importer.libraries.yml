@@ -1,0 +1,4 @@
+result_page:
+  css:
+    theme:
+      css/result.css: {}

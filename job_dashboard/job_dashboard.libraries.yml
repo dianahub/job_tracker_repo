@@ -1,0 +1,9 @@
+app:
+  js:
+    js/app.js: {}
+  dependencies:
+    - core/drupalSettings
+dashboard_banner:
+  css:
+    theme:
+      css/dashboard_banner.css: {}

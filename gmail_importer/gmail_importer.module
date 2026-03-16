@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Gmail Importer module hooks.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Load theme hook implementations.
+ */
+require_once __DIR__ . '/gmail_importer.theme.inc';
+
+/**
+ * Implements hook_help().
+ */
+function gmail_importer_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.gmail_importer') {
+    return '<p>' . t('Imports job-related emails from Gmail into email_record nodes using Claude AI filtering. Configure your credentials at <a href=":url">Gmail Importer Settings</a>.', [':url' => \Drupal\Core\Url::fromRoute('gmail_importer.settings')->toString()]) . '</p>';
+  }
+}

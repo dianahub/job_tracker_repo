@@ -1,0 +1,9 @@
+name: Job Dashboard
+type: module
+description: Displays imported job emails in an interactive dashboard.
+core_version_requirement: ^10 || ^11
+package: Job Tracker
+version: 1.0.0
+dependencies:
+  - drupal:node
+  - job_tracker:gmail_importer

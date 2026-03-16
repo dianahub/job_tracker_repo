@@ -1,0 +1,8 @@
+{% extends '@classy/page.html.twig' %}
+
+{% block content %}
+  {% if job_dashboard_link %}
+    {{ job_dashboard_link }}
+  {% endif %}
+  {{ parent() }}
+{% endblock %}
